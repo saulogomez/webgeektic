@@ -1,0 +1,480 @@
+/*
+  Theme Name: geektic
+  Theme URI:
+  Author: Saulo Gomez Palacios
+  Author URI:
+  Description:Segunda plantilla
+  Version: 1.0
+  Licence: GNU General public licence or later
+  Tags: html5, css3, chulucanas
+
+*/
+ html {
+   box-sizing: border-box;
+ }
+
+ .clear {
+   clear:both;
+ }
+
+ *, *::before, *::after {
+   box-sizing: inherit;
+ }
+
+ body {
+   font-family: 'Open Sans', sans-serif;
+ }
+
+
+
+ body.page-template-default {
+    overflow-y: scroll !important;
+}
+
+body.page-template-default:after {
+   width: 100%;
+   height: auto;
+   content: "";
+   display: block;
+   height: 1816px;
+}
+
+ h1,  h3, h4, h5, h6 {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 900;
+ }
+
+ h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*PARTE DEL HEADER*/
+#header {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+
+ z-index: 9999;
+/*  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition: all 200ms linear;*/
+}
+
+#logo-holder {
+  margin-left: 7%;
+  position: relative;
+  z-index: 101;
+
+}
+
+.left {
+  float: left;
+}
+
+#menu-holder {
+  position: absolute;
+  right: 7%;
+  top: 40%;
+}
+
+.fa-bars {
+  color: #ffffff;
+}
+
+/*zona del video en portada*/
+
+video#videobg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  /*background: url('./img/miniatura_video_tecleando_bg_color_azul.png');*/
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+
+
+/*div#videoimg {
+  position: fixed;
+  background: url('./img/miniatura_video_tecleando_bg_color_azul.png') no-repeat;
+  min-width: 100%;
+  min-height:100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  opacity: 0.5;
+}*/
+
+
+
+/* zona del mai-menu que es el que contiene la pagina emergente donde viene con
+  el menu del sitio */
+
+#main-menu {
+  background-color: rgba(17, 21, 23, 0.9);
+  background-image: url('./img/portf_bg_dark_curve .jpg');
+  color: #ffffff;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all .5s;
+
+}
+
+
+
+#mostrar-modal {
+  display: none;
+}
+
+#mostrar-modal + label {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#mostrar-modal:checked ~ #main-menu {
+  top: 0vh;
+}
+
+#cerrar-modal {
+  display: none;
+
+}
+#cerrar-modal + label {
+  position: absolute;
+  z-index: 100;
+  color: #fff;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+#cerrar-modal:checked ~ #main-menu {
+  top: -100vh;
+}
+
+#cerrar-modal + label {
+  display: none;
+  position: absolute;
+  right: 7%;
+  top: 0%;
+  font-weight: 700;
+}
+
+#mostrar-modal:checked ~ #cerrar-modal + label {
+  display: block;
+}
+
+#cerrar-modal:checked + label {
+  display: none;
+}
+
+/*NAVEGADOR DE MODAL EMERGENTE*/
+
+
+#main-menu nav#site-navigation {
+  width: 100%;
+  height: 45%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#site-navigation ul.menu {
+    list-style: none;
+    margin: auto;
+    display: table;
+    vertical-align: middle;
+    padding: 0;
+
+}
+
+#site-navigation ul li a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+}
+
+#site-navigation ul li a:hover {
+  color: #0066cc;
+}
+
+#site-navigation ul li.current_page_item  a {
+  color:  #0066cc;
+}
+
+/*REDES SOCIALES*/
+
+#main-menu div.informacion-redes {
+    position: relative;
+    top: 80%;
+    text-align: center;
+}
+
+nav.sociales ul#menu-social {
+  list-style: none;
+  padding: 0;
+}
+
+nav.sociales ul#menu-social li {
+   display: inline-block;
+}
+
+nav.sociales ul li a::before {
+  font-family: 'Font Awesome 5 Brands';
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 25px;
+  content: '\f08e';
+  font-size: 30px;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-text {
+  display: none;
+}
+
+nav.sociales li a[href*="facebook.com/GeekticSoluciones/"]::before {
+  content: '\f39e';
+}
+
+nav.sociales li a[href*="youtube.com/watch?v=rNym1THNJO4"]::before {
+  content: '\f167';
+}
+
+nav.sociales li a[href*="instagram.com/geekticsoluciones/"]::before {
+  content: '\f16d';
+}
+
+a.wapp_main {
+  text-decoration: none;
+  font-size: 1.2em;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+a.wapp_main:hover {
+    color: #0066cc;
+}
+
+/*PAGINA DE INICIO*/
+/*#content {
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+
+}*/
+
+.maskee {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+ z-index: 100;
+  overflow: hidden;
+  top:0;
+  left: 0;
+}
+/*.maskee .slide.display {
+    display: block;
+    margin: 0 auto;
+
+}*/
+
+/*.maskee .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+
+}*/
+
+
+/*.maskee .slide .caption {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}*/
+
+/*.maskee .slide.display {
+    display: block;
+}*/
+
+/*.page-header {
+
+    top: 0;
+
+    overflow: hidden;
+
+}
+
+header {
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+margin: 0;
+padding: 0;
+}
+
+@media (max-width: 1500px)
+.page-header > div {
+    padding-top: 4em;
+}*/
+
+.page-header {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+    z-index: 99;
+    display: table;
+    min-height: 100%;
+}
+
+
+.page-header > div {
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 800px;
+    margin: auto;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+ /*ESTILOS DE TITULO*/
+.pre-slide .page-header .title i {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1em;
+    font-weight: 100;
+    letter-spacing: 0;
+}
+
+.pre-slide .page-header .title {
+    max-width: 600px;
+    font-weight: 600;
+    letter-spacing: -3px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+@media (max-height: 960px) {
+.pre-slide .page-header .title {
+    font-size: 4em;
+    line-height: 54px;}
+}
+
+.pre-slide .page-header .subtitle {
+    font-size: 2.2em;
+    color: rgba(255, 255, 255, 0.6) !IMPORTANT;
+    padding-top: 8px;
+    font-family: 'Lora', serif;
+    font-style: italic; */
+    line-height: 25px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+a.krown-button {
+    font: bold 15px/54px "Montserrat", sans-serif;
+    border: 2px solid #ffffff;
+    height: 55px;
+    padding: 0 25px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color:#ffffff;
+    color: #cf3042;
+    /*-webkit-transition: color 150ms linear, background-color 150ms linear, border-color 150ms linear;
+    transition: color 150ms linear, background-color 150ms linear, border-color 150ms linear;*/
+}
+
+a.krown-button:hover {
+  color:#ffffff;
+  background-color: rgba(255,255,255,0.3);
+}
+
+a.dark {
+  font: bold 15px/54px "Montserrat", sans-serif;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  height: 55px;
+  padding: 0 25px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.dark:hover {
+  background-color: #ffffff;
+  color: #cf3042;
+}
+
+a.btn_bg {
+  margin-top: 30px;
+}
+ /*GALERIA DE IMAGENES*/
+ /*#post-481 .media {
+   background-image: url('./img/portada_proyecto_alpina-960x540.jpg');
+}
+.maskee:not(.hide-nav).arrow-left .slide[data-background="light"] {
+  cursor: url('./img/svg-arrow-left-dark.svg'), w-resize;
+  cursor: url('./img/svg-arrow-left-dark.svg') 12 21, auto; }
+.maskee:not(.hide-nav).arrow-left .slide[data-background="dark"] {
+  cursor: url('./img/svg-arrow-left-light.svg'), w-resize;
+  cursor: url('./img/svg-arrow-left-light.svg') 12 21, auto; }
+
+.maskee:not(.hide-nav).arrow-right .slide[data-background="light"] {
+  cursor: url(./imgs/svg-arrow-right-dark.svg), w-resize;
+  cursor: url(./imgs/svg-arrow-right-dark.svg) 12 21, auto; }
+.maskee:not(.hide-nav).arrow-right .slide[data-background="dark"] {
+  cursor: url(./imgs/svg-arrow-right-dark.svg), w-resize;
+  cursor: url(./imgs/svg-arrow-right-dark.svg) 12 21, auto; }*/
+
+
+  .maskee .media {
+    width: 100%;
+    height: 100%;
+    }
+
+  /*  .maskee .media img {
+  display: none; }*/
+  .media {
+ background-color:transparent !important
+}
+
+.maskee .slide {
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height: 100%; */
+  display: none;
+  }
+
+.maskee .slide.display {
+  display: block; }
+
+  article.slide .media {
+    background-image: url('./img/portada_proyecto_alpina-960x540');
+  }
